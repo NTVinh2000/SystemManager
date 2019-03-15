@@ -244,10 +244,10 @@ void DrawMenu()
 	gotoXY(3, 7);
 	cout << "Profile";
 	gotoXY(3, 8);
-	cout << "Profile";
+	cout << "Back to login screen";
 }
 
-int ShowMenu(char _User[])
+int ShowMenu(char _User[],Class std)
 {
 	int ChooseMenu = 0;
 	int c; // lay ki tu nhap tu ban phim
@@ -300,6 +300,8 @@ int ShowMenu(char _User[])
 			{
 				gotoXY(2, 6);
 				cout << " ";
+				gotoXY(2, 8);
+				cout << " ";
 				gotoXY(2, 7);
 				cout << char(16);
 			}
@@ -327,7 +329,7 @@ int ShowMenu(char _User[])
 	}
 	else if (ChooseMenu == 3)
 	{
-		cout << " profile";
+		std.FindStudentId(_User);
 	}
 	else if (ChooseMenu == 4)
 	{
@@ -335,6 +337,6 @@ int ShowMenu(char _User[])
 	}
 	system("PAUSE");
 	system("cls");
-	ShowMenu(_User);
+	ShowMenu(_User, std);
 	return 0;
 }

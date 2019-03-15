@@ -19,6 +19,8 @@ public:
 	void DisplayName(int x, int y); //Display class name
 	bool isChosen(string s); //Check whether the class is chosen
 	void ChangeStudents(Class &B); //Change students from class A to class B
+	void Display1student();
+	int FindStudentId(char _User[]);
 private:
 	vector <Student>  StdList;
 	string Classname;

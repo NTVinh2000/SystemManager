@@ -4,10 +4,15 @@
 int main()
 {
 
-	/*Class APCS186("18APCS4");
+	Class APCS186("18APCS4");
 	vector<Class> ClassList;
 	ClassList.push_back(APCS186);
-	APCS186.DisplayStudent();*/
+	//APCS186.DisplayStudent();
+	//APCS186.DisplayName(0,0);
+	//APCS186.Display1student();
+	//char a[10] = "sadasd";
+	//APCS186.FindStudentId(a);
+	//system("PAUSE");
 	char User[16]; // id
 	while (true)
 	{
@@ -18,7 +23,7 @@ int main()
 		else
 		{
 			system("cls");
-			ShowMenu(User);
+			ShowMenu(User,APCS186);
 		}
 	}
 	//trinh tui lam dc toi day thoi nha may ong <3

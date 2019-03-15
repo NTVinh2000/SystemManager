@@ -177,6 +177,28 @@ void Class::ExportToText()
 	ListFile.close();
 	return;
 }
+void Class::Display1student()
+{
+	StdList[1].Display();
+
+}
+int Class:: FindStudentId(char _User[])
+{
+	for (int i = 0; i < StdList.size(); ++i)
+	{
+		if (StdList[i].ID == atoi(_User))
+		{
+			cout << "Your profile:\n";
+			cout << "Name: "<< StdList[i].lastName <<" "<< StdList[i].firstName << " " <<  endl;
+			cout << "ID: " << StdList[i].ID << endl;
+			cout << "Gender: " << StdList[i].gender << endl;
+			cout <<"Day of birth: "<< StdList[i].DOB.day << "-" << StdList[i].DOB.month << "-" << StdList[i].DOB.year;
+			return 0;
+		}
+	}
+	cout << "Can not find your profile";
+	return 0;
+}
 
 void Class::DisplayStudent()
 {
