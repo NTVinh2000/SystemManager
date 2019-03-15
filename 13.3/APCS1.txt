@@ -1,0 +1,176 @@
+18125001
+Mai Van
+A
+Male
+01
+04
+2000
+
+18125002
+Hoang Van
+B
+Female
+18
+08
+2000
+
+18125003
+Nguyen
+Phat
+Male
+03
+04
+2000
+
+18125004
+Nguyen Van
+Trong
+Female
+04
+11
+2000
+
+18125005
+Tran Cong Hoang
+Anh
+Male
+21
+06
+2000
+
+18125006
+Pham Le Thuy
+Dung
+Female
+06
+04
+2000
+
+18125007
+Ngo Thi
+Nham
+Male
+07
+04
+2000
+
+18125008
+Nguyen Tan
+Dung
+Female
+08
+04
+2000
+
+18125009
+Nguyen Phu
+Trong
+Male
+31
+12
+2000
+
+18125010
+Dang Van
+Thanh
+Female
+09
+03
+2000
+
+18125010
+Dang Van
+Thanh
+Female
+09
+03
+2000
+
+18125200
+Nguyen Van
+An 
+Male
+25
+12
+2000
+
+18125201
+Tran Van 
+Binh
+Male
+30
+4
+2000
+
+18125202
+Nguyen Thi
+Chau
+Female
+1
+5
+2000
+
+18125203
+Le Tien
+Dung
+Male
+1
+6
+2000
+
+18125204
+Ly Duc
+Hai
+Maie
+25
+6
+2000
+
+18125205
+Hoang Thanh
+Phat
+Male
+10
+7
+2000
+
+18125206
+Nguyen Xuan 
+Mai
+Female
+15
+8
+2000
+
+18125207
+Nguyen Tang
+Nhat
+Male
+20
+9
+2000
+
+18125208
+Tang Xuan 
+Nhan
+Male
+3
+10
+2000
+
+18125209
+Hoang Le 
+Mai
+Female
+29
+12
+2000
+
+18125209
+Hoang Le 
+Mai
+Female
+29
+12
+2000
+
