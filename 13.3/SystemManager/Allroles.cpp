@@ -8,7 +8,8 @@ using namespace std;
 void DrawLoginScreen()
 {
 	gotoXY(0, 0);
-	cout << "USE UP OR DOWN ARROW";
+	cout << "USE UP OR DOWN ARROW" << endl;
+	cout << "Press Esc to exit";
 	gotoXY(20, 5);
 	cout << "LOGIN SCREEN";
 	gotoXY(10, 7);
@@ -129,6 +130,8 @@ int Login(char _User[]) // _User dung de truy cap vao du lieu cua user do
 					{
 						
 						char ch = _getch();
+						if (int(ch) == 27)
+							return 0;
 						if (verify(ch, Username, Password) == 1)
 						{
 							strcpy_s(_User,16, Username);
@@ -187,6 +190,8 @@ int Login(char _User[]) // _User dung de truy cap vao du lieu cua user do
 					if (_kbhit())
 					{
 						char ch = _getch();
+						if (int(ch) == 27)
+							return 0;
 						if (verify(ch, Username, Password) == 1)
 						{
 						
@@ -199,7 +204,7 @@ int Login(char _User[]) // _User dung de truy cap vao du lieu cua user do
 							gotoXY(10, 11);
 							if (Password[0] == '\0')
 								cout << "Password:";
-							else ProtectPassword;
+							else ProtectPassword(Password);
 							break;
 						}
 						else if (int(ch) == 8 && strlen(Password) > 0) //backspace
@@ -232,6 +237,120 @@ int Login(char _User[]) // _User dung de truy cap vao du lieu cua user do
 	}
 }			
 //4 ham tren dung de dung login screen
+
+void DrawMenulv3()
+{
+
+	gotoXY(2, 4);
+	cout << char(16) << "Class";
+	gotoXY(3, 5);
+	cout << "Course";
+	gotoXY(3, 6);
+	cout << "Scoreboard";
+	gotoXY(3, 7);
+	cout << "Attendance list";
+	gotoXY(3, 8);
+	cout << "Back";
+}
+int ShowMenulv3(char _User[])
+{
+	int ChooseMenu = 0;
+	int c; // lay ki tu nhap tu ban phim
+	cout << "Username:" << _User;
+	DrawMenulv3();
+	int i = 0;
+	while (true)
+	{
+		if (_kbhit())
+		{
+			c = _getch();
+			/*
+			if (c == 8) //backspace
+			{
+				system("cls");
+				return 0;// quay lai login
+			}*/
+			if (c == 80 && ChooseMenu < 4) // down && tranh ChooseMenu lon hon 4
+				++ChooseMenu;
+			else if (c == 72 && ChooseMenu > 0) //up && tranh chooseMenu am
+				--ChooseMenu;
+			else if (c == 13)// enter
+				break;
+			if (ChooseMenu == 0)
+			{
+				gotoXY(2, 5);
+				cout << " ";
+				gotoXY(2, 4);
+				cout << char(16);
+			}
+			else if (ChooseMenu == 1)
+			{
+				gotoXY(2, 4);
+				cout << " ";
+				gotoXY(2, 6);
+				cout << " ";
+				gotoXY(2, 5);
+				cout << char(16);
+			}
+			else if (ChooseMenu == 2)
+			{
+				gotoXY(2, 5);
+				cout << " ";
+				gotoXY(2, 7);
+				cout << " ";
+				gotoXY(2, 6);
+				cout << char(16);
+
+			}
+			else if (ChooseMenu == 3)
+			{
+				gotoXY(2, 6);
+				cout << " ";
+				gotoXY(2, 8);
+				cout << " ";
+				gotoXY(2, 7);
+				cout << char(16);
+			}
+			else if (ChooseMenu == 4)
+			{
+				gotoXY(2, 7);
+				cout << " ";
+				gotoXY(2, 8);
+				cout << char(16);
+			}
+		}
+	}
+	system("cls");
+	gotoXY(0, 0);
+	// bo ca menu o day
+	if (ChooseMenu == 0) {
+		cout << "Class";
+		system("PAUSE");
+	}
+	else if (ChooseMenu == 1) {
+		cout << "Course";
+		system("PAUSE");
+	}
+	else if (ChooseMenu == 2)
+	{
+		cout << "Scoreboard";
+		system("PAUSE");
+	}
+	else if (ChooseMenu == 3)
+	{
+		cout << "Attendance list";
+		system("PAUSE");
+	}
+	else if (ChooseMenu == 4)
+	{
+		return 0;
+	}
+	system("cls");
+	gotoXY(0, 0);
+	ShowMenulv3(_User);
+	return 0;
+
+}
 void DrawMenu()
 {
 
@@ -246,7 +365,6 @@ void DrawMenu()
 	gotoXY(3, 8);
 	cout << "Back to login screen";
 }
-
 int ShowMenu(char _User[],Class std)
 {
 	int ChooseMenu = 0;
@@ -259,11 +377,12 @@ int ShowMenu(char _User[],Class std)
 		if (_kbhit())
 		{
 			c = _getch();
+			/*
 			if (c == 8) //backspace
 			{
 				system("cls");
 				return 0;// quay lai login
-			}
+			}*/
 			if (c == 80 && ChooseMenu < 4) // down && tranh ChooseMenu lon hon 4
 				++ChooseMenu;
 			else if (c == 72 && ChooseMenu > 0) //up && tranh chooseMenu am
@@ -319,23 +438,28 @@ int ShowMenu(char _User[],Class std)
 	gotoXY(0, 0);
 	// bo ca menu o day
 	if (ChooseMenu == 0)
-		cout << "Staff Menu";
-	else if (ChooseMenu == 1)
+	{
+		ShowMenulv3(_User);
+		
+	}
+	else if (ChooseMenu == 1) {
 		cout << "Lecturer Menu";
+		system("PAUSE");
+	}
 	else if (ChooseMenu == 2)
 	{
 		cout << "Class Menu";
-		gotoXY(5, 5);
+		system("PAUSE");
 	}
 	else if (ChooseMenu == 3)
 	{
 		std.FindStudentId(_User);
+		system("PAUSE");
 	}
 	else if (ChooseMenu == 4)
 	{
 		return 0;
 	}
-	system("PAUSE");
 	system("cls");
 	ShowMenu(_User, std);
 	return 0;
